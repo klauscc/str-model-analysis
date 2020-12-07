@@ -1,0 +1,6 @@
+*.pyc
+__pycache__/
+misc/
+.DS_Store
+third-party/CRNN.tf2
+release/

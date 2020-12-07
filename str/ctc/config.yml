@@ -1,0 +1,44 @@
+mode: train
+
+#dataset
+characters: 0123456789abcdefghijklmnopqrstuvwxyz
+#db_dir: /home/fengchan/stor6/dataset/original_dataset/ocr/lmdb/data_lmdb_release/training
+db_dir: /tmp/fengcheng/dataset/ocr/data_lmdb_release/training
+db_names: [MJ/MJ_train, ST]
+db_pick_ratio: [0.5, 0.5]
+
+#test_db_dir: /home/fengchan/stor6/dataset/original_dataset/ocr/lmdb/data_lmdb_release
+test_db_dir: /tmp/fengcheng/dataset/ocr/data_lmdb_release
+test_db_names: [validation] 
+test_db_pick_ratio: [1.]
+
+rgb: True
+sensitive: False
+decode_img: False
+data_filtering_off: False
+buffer_size: 100000
+batch_size: 256
+num_parallel_calls: 8
+
+# input
+tar_img_size: [64, 256]
+multi_scales: False
+
+# model
+d_model: 512
+num_heads: 8
+dff: 2048
+dropout_rate: 0.1
+num_encoder_sa: 2
+num_decoder_sa: 2
+max_n_chars: 25
+with_semantic_reasoning: False
+bn_momentum: 0.99
+
+
+# optimizer
+init_lr: 0.0001
+lr_decay_policy: None
+optimizer: adam
+beta_1: 0.9
+beta_2: 0.999

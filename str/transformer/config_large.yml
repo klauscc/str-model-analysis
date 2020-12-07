@@ -1,0 +1,74 @@
+mode: train
+
+#dataset
+#db_dir: /home/fengchan/stor6/dataset/original_dataset/ocr/lmdb/data_lmdb_release/training
+db_dir: /tmp/fengcheng/dataset/ocr/data_lmdb_release/training
+db_names: [MJ/MJ_train, ST]
+db_pick_ratio: [0.5, 0.5]
+
+#test_db_dir: /home/fengchan/stor6/dataset/original_dataset/ocr/lmdb/data_lmdb_release
+test_db_dir: /tmp/fengcheng/dataset/ocr/data_lmdb_release
+test_db_names: [validation] 
+test_db_pick_ratio: [1.]
+
+#eval_db_dir: /home/fengchan/stor6/dataset/original_dataset/ocr/lmdb/data_lmdb_release/evaluation
+eval_db_dir: /tmp/fengcheng/dataset/ocr/data_lmdb_release/evaluation
+
+decode_img: False
+data_filtering_off: False
+buffer_size: 100000
+num_parallel_calls: 8
+
+# input
+rgb: True
+tar_img_size: [64, 256]
+img_zero_mean: False
+batch_size: 256
+with_eos: True
+label_converter: seq2seq
+multi_scales: False
+keep_aspect_ratio: False
+augment: True
+with_image_transform: True
+with_tps: True
+voc_type: LOWERCASE
+
+# model
+d_model: 512
+num_heads: 8
+dff: 2048
+dropout_rate: 0.1
+num_encoder_sa: 4
+num_decoder_layers: 4
+max_n_chars: 25
+maximum_position_encoding: 100
+bn_momentum: 0.99
+backbone_dowmsample_scales: 8
+## decode
+beam_size: 1
+alpha: 0.6
+extra_decode_length: 10
+padded_decode: False
+
+encode_training_mode: encoder_only # no bn
+label_smooth: 0.0
+label_jitter: 0.0
+
+attend_1d: False
+
+with_parallel_visual_attention: False
+pd_method: semantic_reasoning  # 'semantic_reasoning', 'dan_cam'. only valid when with_parallel_visual_attention
+pd_early_fusion: False
+pd_late_fusion: False
+
+#two way conv
+two_way_conv: False
+merge_mode: max
+
+
+# optimizer
+init_lr: 0.0001
+lr_decay_policy: None
+optimizer: adam
+beta_1: 0.9
+beta_2: 0.999
