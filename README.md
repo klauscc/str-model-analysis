@@ -28,7 +28,6 @@ Official Tensorflow implementation for our paper.
 clone the repo:
 
 ```
-<font color='red'># A submodule: [tfbp](https://github.com/klauscc/tfbp)</font>
 git clone --recurse-submodules git@github.com:klauscc/str-model-analysis.git
 # or with https
 git clone --recurse-submodules git@github.com:klauscc/str-model-analysis.git
@@ -57,7 +56,7 @@ training datasets : [MJSynth (MJ)](http://www.robots.ox.ac.uk/~vgg/data/text/)[1
 validation datasets : the union of the training sets [IC13](http://rrc.cvc.uab.es/?ch=2)[3], [IC15](http://rrc.cvc.uab.es/?ch=4)[4], [IIIT](http://cvit.iiit.ac.in/projects/SceneTextUnderstanding/IIIT5K.html)[5], and [SVT](http://www.iapr-tc11.org/mediawiki/index.php/The_Street_View_Text_Dataset)[6].\
 evaluation datasets : benchmark evaluation datasets, consist of [IIIT](http://cvit.iiit.ac.in/projects/SceneTextUnderstanding/IIIT5K.html)[5], [SVT](http://www.iapr-tc11.org/mediawiki/index.php/The_Street_View_Text_Dataset)[6], [IC03](http://www.iapr-tc11.org/mediawiki/index.php/ICDAR_2003_Robust_Reading_Competitions)[7], [IC13](http://rrc.cvc.uab.es/?ch=2)[3], [IC15](http://rrc.cvc.uab.es/?ch=4)[4], [SVTP](http://openaccess.thecvf.com/content_iccv_2013/papers/Phan_Recognizing_Text_with_2013_ICCV_paper.pdf)[8], and [CUTE](http://cs-chan.com/downloads_CUTE80_dataset.html)[9].
 
-### 3. Models
+### 4. Models
 
 Currently implemented models:
 
@@ -92,7 +91,7 @@ python -m str.transformer.train \
     --with_parallel_visual_attention True \
     --pd_method dan_cam \
     --pd_early_fusion True \
-    --pd_late_fusion: False \
+    --pd_late_fusion False \
 ```
 
 - Evaluate:
