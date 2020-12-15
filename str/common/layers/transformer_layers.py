@@ -3,7 +3,6 @@
 #   God Bless You.
 #
 #   author: klaus
-#   email: chengfeng2333@gmail.com
 #   created date: 2020/07/08
 #   description:
 #

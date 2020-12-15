@@ -2,8 +2,7 @@
 #================================================================
 #   Don't go gently into that good night. 
 #   
-#   author: fengcheng
-#   email: chengfeng2333@@gmail.com
+#   author: klaus
 #   created date: 2020/12/06
 #   description: 
 #
